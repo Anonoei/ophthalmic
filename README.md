@@ -1,6 +1,8 @@
 # ophthalmic
 
-My FOSS program that serves as an alternative to some of the best "Synthesia" alternatives I have previously used:
+A Synthesia alternative written with my in house graphics engine in C++
+
+Ophthalmic is supposed to serve as the best alternative to programs such as:
 Synthesia, PianoFromAbove, and SeeMusic.
 
 My goal for this project is to create my own code for my purposes of Synthesia.
