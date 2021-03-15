@@ -1,0 +1,15 @@
+# Binaries
+**/bin/
+!vendor/premake/bin/
+bin-int/
+
+# DAGGer files
+**.log
+**.json
+
+# Visual Studio files and folder
+.vs/
+**.sln
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user
