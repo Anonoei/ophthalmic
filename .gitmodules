@@ -1,0 +1,3 @@
+[submodule "DAGGer"]
+	path = DAGGer
+	url = https://github.com/anonoei/DAGGer
