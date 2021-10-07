@@ -7,68 +7,50 @@ workspace "Ophthalmic"
 		"Release",
 		"Distribution"
 	}
-	
+
 	platforms
 	{
-		"Win-64",
-		"Win-32",
-		"Linux-64",
-		"Linux-32",
-		"MacOS-64",
-		"MacOS-32",
-		"iOS-ARM",
-		"Anrdoid-ARM",
+		"Win64",
+		"Win32",
+		"Linux64",
+		"Linux32",
+		"Mac64",
+		"Mac32",
+		
+		"iOS",
+		"Anrdoid"
 	}
-	
-	filter {"platforms:Win-64 or Linux-64 or MacOS-64"}		--	x86_64
-		architecture "x86_64"
-
-	filter {"platforms:Win-32 or Linux-32 or MacOS-32"}		--	x86
-		architecture "x86"
-
-	filter {"platforms:iOS-64 or Android-64"}				--	ARM
-		architecture "ARM"
-
-	filter {"system:windows"}			--	WINDOWS
-		removeplatforms { "Linux-32", "Linux-64", "MacOS-32", "MacOS-64" }
-
-	filter {"system:linux"}				--	LINUX
-		removeplatforms { "Win-32", "Win-64", "MacOS-32", "MacOS-64" }
-
-	filter {"system:macosx"}			--	MACOS
-		removeplatforms { "Linux-32", "Linux-64", "Win-32", "Win-64" }
-
-	filter ""
 
 	flags
 	{
 		"MultiProcessorCompile"
 	}
 
-outputdir = "bin/%{cfg.buildcfg}-%{cfg.system}-%{cfg.platform}"
+	filter {"platforms:Win64 or Linux64 or Mac64"}		--	x86_64
+		architecture "x86_64"
 
--- Include directories relative to root folder
-IncludeDir = {}
-IncludeDir["GLFW"]		= "%{wks.location}/DAGGer/vendor/glfw/include"
-IncludeDir["Glad"]		= "%{wks.location}/DAGGer/vendor/Glad"
-IncludeDir["ImGui"]		= "%{wks.location}/DAGGer/vendor/imgui"
-IncludeDir["glm"]		= "%{wks.location}/DAGGer/vendor/glm"
-IncludeDir["stb_image"] = "%{wks.location}/DAGGer/vendor/stb_image"
-IncludeDir["entt"]		= "%{wks.location}/DAGGer/vendor/entt/include"
-IncludeDir["yaml_cpp"]  = "%{wks.location}/DAGGer/vendor/yaml-cpp/include"
-IncludeDir["ImGuizmo"]  = "%{wks.location}/DAGGer/vendor/ImGuizmo"
+	filter {"platforms:Win32 or Linux32 or Mac32"}		--	x86
+		architecture "x86"
 
-group "Dependencies"
-	include "vendor/premake"
-	include "DAGGer/vendor/glfw"
-	include "DAGGer/vendor/Glad"
-	include "DAGGer/vendor/imgui"
-	include "DAGGer/vendor/yaml-cpp"
-group ""
+	filter {"platforms:iOS-64 or Android-64"}				--	ARM
+		architecture "ARM"
 
-group "Core"
-	include "DAGGer"
-	include "DAGGer-ScriptCore"
-group ""
+	filter {"system:windows"}			--	WINDOWS
+		removeplatforms { "Linux32", "Linux64", "Mac32", "Mac64" }
+		defaultplatform "Win64"
 
-include "Opthalmic"
+	filter {"system:linux"}				--	LINUX
+		removeplatforms { "Win32", "Win64", "Mac32", "Mac64" }
+		defaultplatform "Linux64"
+
+	filter {"system:macosx"}			--	MACOS
+		removeplatforms { "Linux32", "Linux64", "Win32", "Win64" }
+		defaultplatform "Mac64"
+	filter ""
+
+	-- Debug/Release/Dist /-/ Build on OS /-/ Build for OS
+	outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.platform}"
+
+include "DAGGer"
+
+include "Ophthalmic"
