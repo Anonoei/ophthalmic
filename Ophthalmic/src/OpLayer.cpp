@@ -28,6 +28,11 @@ void OpLayer::OnAttach()
 	m_ActiveScene = DAGGer::Ref<DAGGer::Scene>::Create();
 
 	m_EditorCamera = DAGGer::EditorCamera(30.0f, 1.778f, 0.1f, 1000.0f);
+
+	m_Manager.CreateNote(m_ActiveScene);
+
+	m_DebugPanel.Init(&m_Manager);
+
 	UpdateWindowTitle();
 }
 
@@ -58,6 +63,7 @@ void OpLayer::OnUpdate(DAGGer::Timestep ts)
 	m_Framebuffer->ClearAttachment(1, -1);
 
 	//	Update Scene
+	//m_Manager.OnUpdate(ts);
 	m_ActiveScene->OnUpdateEditor(ts, m_EditorCamera);
 
 	m_Framebuffer->Unbind();
@@ -236,6 +242,7 @@ void OpLayer::OnImGuiRender()
 	ImGui::PopStyleVar();
 
 	m_LibraryPanel.OnImGuiRender();
+	m_DebugPanel.OnImGuiRender();
 
 	UI_Toolbar();
 

@@ -4,6 +4,9 @@
 #include "DAGGer/Renderer/EditorCamera.h"
 
 #include "panels/LibraryPanel.h"
+#include "panels/DebugPanel.h"
+
+#include "objects/Manager.h"
 
 #define OPHTHALMIC_BUILD_ID "v0.0.1"
 
@@ -41,9 +44,12 @@ private:
 	glm::vec2 m_ViewportSize = DrPos2(0.0f, 0.0f);
 	glm::vec2 m_ViewportBounds[2];
 
+	Manager m_Manager;
+
 	//	Textures
 	DAGGer::Ref<DAGGer::Texture2D> m_IconPlay, m_IconPause, m_IconStop;
 
 	//	Panels
 	LibraryPanel m_LibraryPanel;
+	DebugPanel m_DebugPanel;
 };

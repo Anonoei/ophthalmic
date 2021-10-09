@@ -14,23 +14,23 @@ As an artist and programmer who passionately supports open source, I release all
 With this in mind, I decided to make my own, but just hardcoding or using a well known graphics engine was too easy, so this is also created with my own graphics engine, [DAGGer](https://github.com/DAGGer).
 
 ## Current status/roadmap
-  - [-] Profit (jk it's FOSS)
-  - [-] Understand that no projects are ever finished
-  - [-] Make it more customizable
-  - [-] Quality of life features
-  - [-] Enable exporting renders for slow hardware
-  - [-] Make it easy to record
-  - [-] User preferences/editing for graphics
-  - [-] Optionally, make it pretty
-  - [-] Initial Release
-  - [-] Make human interpretable interface
-  - [-] Make it stable/work well
-  - [-] User preferences (keyboard size)
-  - [-] File explorer
-  - [-] Read MIDI files
-  - [-] Make the piano and notes work together
-  - [-] Show piano on screen
-  - [-] Show notes on the screen
+  - [ ] Profit (jk it's FOSS)
+  - [ ] Understand that no projects are ever finished
+  - [ ] Make it more customizable
+  - [ ] Quality of life features
+  - [ ] Enable exporting renders for slow hardware
+  - [ ] Make it easy to record
+  - [ ] User preferences/editing for graphics
+  - [ ] Optionally, make it pretty
+  - [ ] Initial Release
+  - [ ] Make human interpretable interface
+  - [ ] Make it stable/work well
+  - [ ] User preferences (keyboard size)
+  - [ ] File explorer
+  - [ ] Read MIDI files
+  - [ ] Make the piano and notes work together
+  - [ ] Show piano on screen
+  - [X] Show notes on the screen
   - [X] Get working on DAGGer
 
 This will be a long journey, but I hope to create the best product on the market. I hope you'll join me for the ride :)

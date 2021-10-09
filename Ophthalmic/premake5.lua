@@ -25,7 +25,7 @@ project "Ophthalmic"
 		"%{IncludeDir.DAALS}",
 
 		"%{IncludeDir.Config}",
-		"%{wks.location}"
+		"src"
 	}
 	
 	links
